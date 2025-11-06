@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appwrite Sites Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Appwrite Sites Preview Test</h1>
+            <p class="subtitle">Testing preview builds on pull requests</p>
+        </header>
+        
+        <main>
+            <div class="status-card">
+                <h2>Build Status Test</h2>
+                <p>This page is used to test Appwrite Sites preview builds.</p>
+                <div class="build-info">
+                    <span class="label">Environment:</span>
+                    <span class="value" id="env">Production</span>
+                </div>
+                <div class="build-info">
+                    <span class="label">Build Time:</span>
+                    <span class="value" id="buildTime">Loading...</span>
+                </div>
+            </div>
+            
+            <div class="test-section">
+                <h3>Preview Build Checklist</h3>
+                <ul class="checklist">
+                    <li>✅ Repository connected to Appwrite</li>
+                    <li>❓ Preview builds enabled</li>
+                    <li>❓ Build commands configured</li>
+                    <li>❓ Environment variables set</li>
+                </ul>
+            </div>
+            
+            <div class="actions">
+                <button onclick="testBuild()">Test Build</button>
+                <button onclick="checkStatus()">Check Status</button>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Version: 1.0.0 | Last updated: <span id="lastUpdate"></span></p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

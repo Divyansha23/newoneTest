@@ -1,0 +1,36 @@
+name: Test Appwrite Sites Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Test HTML validity
+      run: |
+        echo "Testing HTML files..."
+        # Simple HTML validation (you can add more sophisticated tools)
+        if [ -f "index.html" ]; then
+          echo "✅ index.html found"
+        else
+          echo "❌ index.html not found"
+          exit 1
+        fi
+    
+    - name: Check file structure
+      run: |
+        echo "Project structure:"
+        find . -type f -name "*.html" -o -name "*.css" -o -name "*.js" | head -10
+        
+    - name: Environment info
+      run: |
+        echo "Branch: ${{ github.ref }}"
+        echo "Event: ${{ github.event_name }}"
+        echo "PR Number: ${{ github.event.number }}"
